@@ -1,10 +1,9 @@
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const app = require("./app");
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config({ path: './config.env' });
+const app = require('./app');
 
-dotenv.config({ path: "./config.env" });
-
-const DB = process.env.ATLAS_URI.replace("<PASSWORD>", process.env.PASSWORD);
+const DB = process.env.ATLAS_URI.replace('<PASSWORD>', process.env.PASSWORD);
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
@@ -14,7 +13,7 @@ mongoose
   })
   .then((con) => {
     console.log(
-      "-------------------------------------MongoDB connected Successfully-------------------------------------"
+      '-------------------------------------MongoDB connected Successfully-------------------------------------'
     );
   });
 
