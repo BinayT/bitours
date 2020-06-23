@@ -5,6 +5,10 @@ const tourController = require('./../controllers/tourController');
 //router.param('id', tourController.checkId);
 
 router
+  .route('/top-5-cheap')
+  .get(tourController.get5CheapTour, tourController.getAllTours);
+
+router
   .route('/:id')
   .get(tourController.getTour)
   .patch(tourController.updateTour)
